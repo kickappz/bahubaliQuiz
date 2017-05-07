@@ -11,13 +11,63 @@
     tools:context="quiz.quickapps.com.basequiz.MainActivity">
 
     <TextView
-        android:id="@+id/txt_view"
+        android:id="@+id/question_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="Can you identify the plot for mahishmati kingdom? "
+        android:textSize="22sp"
+        android:padding="10dp"/>
     <ImageView
         android:id="@+id/img_works"
+        android:layout_below="@id/question_txt"
         android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_height="200dp"
+        android:padding="10dp"
+        />
+
+    <RadioGroup
+        android:id="@+id/optionsGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_works">
+
+        <RadioButton
+            android:id="@+id/option1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="option one"
+            android:textSize="20sp"/>
+
+        <RadioButton
+            android:id="@+id/option2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="option two"
+            android:textSize="20sp"/>
+
+        <RadioButton
+            android:id="@+id/option3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="option third"
+            android:textSize="20sp"/>
+
+        <RadioButton
+            android:id="@+id/option4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="option fourth"
+            android:textSize="20sp"/>
+
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/submit_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/optionsGroup"
         />
 </RelativeLayout>
