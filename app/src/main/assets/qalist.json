@@ -1,0 +1,54 @@
+{
+questions:[
+{
+"imgNum":1,
+"questionNum":1,
+"questionTxt":"What is Adavi sheshu's character name in Baahubali?",
+"option1":"Adavi",
+"option2":"Sheshu",
+"option3":"Mainse",
+"option4":"pilla bithiri",
+"answer":3
+},
+{
+"imgNum":2,
+"questionNum":2,
+"questionTxt":"What is Devasena kingdom's symbol?",
+"option1":"Peacock",
+"option2":"Lion",
+"option3":"Parrot",
+"option4":"Rainbow",
+"answer":1
+},
+{
+"imgNum":3,
+"questionNum":3,
+"questionTxt":"What is the strategy used by Bahubali to defeat Kalakeya?",
+"option1":"Sarpa sutram",
+"option2":"Trisula sutram",
+"option3":"Chakra sutram",
+"option4":"Sunaka sutram",
+"answer":2
+},
+{
+"imgNum":4,
+"questionNum":4,
+"questionTxt":"Bahubali writer name?",
+"option1":"Vijayandra Sharma",
+"option2":"Vijayendra Prasad",
+"option3":"Krishna Murthy",
+"option4":"Rajamouli",
+"answer":2
+},
+{
+"imgNum":5,
+"questionNum":5,
+"questionTxt":"What is mahishmati's logo?",
+"option1":"Lion",
+"option2":"Horse",
+"option3":"Elephant",
+"option4":"Rhino",
+"answer":1
+}
+]
+}
