@@ -20,9 +20,8 @@
     <ImageView
         android:id="@+id/img_works"
         android:layout_below="@id/question_txt"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:padding="10dp"
         />
 
     <RadioGroup
@@ -69,5 +68,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
         android:layout_below="@id/optionsGroup"
+        android:text="Submit"
         />
 </RelativeLayout>

@@ -1,6 +1,7 @@
 package quiz.quickapps.com.basequiz;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -11,25 +12,26 @@ import android.widget.TextView;
 public class ResultActivity extends Activity {
 
     TextView playerSkillClassification,scoreValue;
-    int score;
+    int score = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.result_activity);
 
+        Intent intent = getIntent();
         playerSkillClassification = (TextView)findViewById(R.id.playerSkillClassification);
         scoreValue = (TextView) findViewById(R.id.score);
 
-        if(savedInstanceState.containsKey("scoreValue")){
-            score = savedInstanceState.getInt("scoreValue");
-            scoreValue.setText(score);
-        }
+            score = intent.getIntExtra("scoreValue",0);
+            scoreValue.setText(String.valueOf(score));
 
-        if(score>7){
-            playerSkillClassification.setText("Bahubali");
+
+        if(score>3){
+            playerSkillClassification.setText("Congrats! You have the IQ of Bahubali");
         }
         else
         {
-            playerSkillClassification.setText("Bicchaladeva");
+            playerSkillClassification.setText("Sorry your IQ is as low as Bicchaladeva");
         }
     }
 }

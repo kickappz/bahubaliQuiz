@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     Button submitBtn;
     RadioGroup rdGroup;
     int questionNum=0;
+    int radioValue=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             mQaList = loadQuestions.parseJsonToList(this);
             if (mQaList != null && mQaList.size() > 0) {
                 Log.i("Base Quiz app", "onCreate: " + mQaList.size() + " -- image name:" + mQaList.get(1).getImg1());
-               // Collections.shuffle(mQaList);
+                Collections.shuffle(mQaList);
             }
             setupView();
 
@@ -63,6 +64,30 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
+
+        rdGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch(checkedId)
+                {
+                    case R.id.option1:
+                        radioValue = 1;
+                        break;
+
+                    case R.id.option2:
+                        radioValue = 2;
+                        break;
+
+                    case R.id.option3:
+                        radioValue = 3;
+                        break;
+
+                    case R.id.option4:
+                        radioValue = 4;
+                        break;
+                }
+            }
+        });
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,16 +96,20 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    if(rdGroup.getCheckedRadioButtonId()==mQaList.get(questionNum).getAnswer()){
+                    Toast.makeText(getBaseContext(),"Radio answer"+radioValue+" orig answer: "+mQaList.get(questionNum).getAnswer(),Toast.LENGTH_SHORT).show();
+
+                    if(radioValue==mQaList.get(questionNum).getAnswer()){
                         mScore++;
+                        Toast.makeText(getBaseContext(),"Score Value"+mScore,Toast.LENGTH_SHORT).show();
                     }
-                    if(questionNum-1<mQaList.size()) {
+                    if(questionNum<mQaList.size()-1) {
                         questionNum++;
                         rdGroup.clearCheck();
                         loadQuestion(questionNum);
                     }
                     else {
                         Intent intent = new  Intent(MainActivity.this,ResultActivity.class);
+                        Log.i("Main", "onClick: Score "+mScore);
                         intent.putExtra("scoreValue",mScore);
                         startActivity(intent);
                     }
@@ -112,14 +141,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loadQuestion(int index){
+            radioValue=0;
             questionTxt.setText(mQaList.get(index).getQuestion());
             imgVw.setImageResource(mQaList.get(index).getImg1());
             radio1.setText(mQaList.get(index).getOption1());
             radio2.setText(mQaList.get(index).getOption2());
             radio3.setText(mQaList.get(index).getOption3());
             radio4.setText(mQaList.get(index).getOption4());
-
-        Toast.makeText(getBaseContext(),"index value : "+index+" list value"+mQaList.size(),Toast.LENGTH_SHORT).show();
     }
 
     private void setupView(){
