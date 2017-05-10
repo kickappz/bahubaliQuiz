@@ -6,7 +6,7 @@ questions:[
 "questionTxt":"What is Adavi sheshu's character name in Baahubali?",
 "option1":"Adavi",
 "option2":"Sheshu",
-"option3":"Mainse",
+"option3":"Bhadrudu",
 "option4":"pilla bithiri",
 "answer":3
 },
@@ -48,6 +48,56 @@ questions:[
 "option2":"Horse",
 "option3":"Elephant",
 "option4":"Rhino",
+"answer":2
+},
+{
+"imgNum":6,
+"questionNum":6,
+"questionTxt":"What is the name of the tribe that attacked anushka's kingdom?",
+"option1":"Virudhulu",
+"option2":"Kalakeyulu",
+"option3":"Cholulu",
+"option4":"None of the above",
+"answer":1
+},
+{
+"imgNum":7,
+"questionNum":7,
+"questionTxt":"What was Devasena's brother in law name?",
+"option1":"Sivudu",
+"option2":"Kumara Varma",
+"option3":"Rudrudu",
+"option4":"Palvaaldeva",
+"answer":2
+},
+{
+"imgNum":8,
+"questionNum":8,
+"questionTxt":"Who is Bhalaladeva's wife ?",
+"option1":"Anushka",
+"option2":"He didn't marry",
+"option3":"Some other queen",
+"option4":"I don't know. Ask Rajamouli",
+"answer":2
+},
+{
+"imgNum":9,
+"questionNum":9,
+"questionTxt":"How many sarees did Anushka wear in Bahubali 1?",
+"option1":"7",
+"option2":"8",
+"option3":"1",
+"option4":"3",
+"answer":2
+},
+{
+"imgNum":10,
+"questionNum":10,
+"questionTxt":"In how many theaters was the movie officially released?",
+"option1":"9000",
+"option2":"3000",
+"option3":"5000",
+"option4":"7000",
 "answer":1
 }
 ]
