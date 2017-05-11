@@ -15,6 +15,9 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -37,16 +40,22 @@ public class MainActivity extends AppCompatActivity {
     RadioGroup rdGroup;
     int questionNum=0;
     int radioValue=0;
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
         try {
             LoadQuestions loadQuestions = new LoadQuestions();
             mQaList = loadQuestions.parseJsonToList(this);
             if (mQaList != null && mQaList.size() > 0) {
-                Log.i("Base Quiz app", "onCreate: " + mQaList.size() + " -- image name:" + mQaList.get(1).getImg1());
                 Collections.shuffle(mQaList);
             }
             setupView();
@@ -96,11 +105,8 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    Toast.makeText(getBaseContext(),"Radio answer"+radioValue+" orig answer: "+mQaList.get(questionNum).getAnswer(),Toast.LENGTH_SHORT).show();
-
                     if(radioValue==mQaList.get(questionNum).getAnswer()){
                         mScore++;
-                        Toast.makeText(getBaseContext(),"Score Value"+mScore,Toast.LENGTH_SHORT).show();
                     }
                     if(questionNum<mQaList.size()-1) {
                         questionNum++;
